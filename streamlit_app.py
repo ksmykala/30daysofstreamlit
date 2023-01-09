@@ -1,8 +1,14 @@
 import streamlit as st
+from st_pages import first_week, hello_map, main_page
 
-st.header('Day 3')
+PAGES = {
+    "Main": main_page,
+    "Hello Map": hello_map,
+    "Days 1-4": first_week,
+}
 
-if st.button('Say hello'):
-    st.write('Why hello there')
-else:
-    st.write('Goodbye')
+selected_page = st.sidebar.selectbox(
+    "Select the page", list(PAGES.keys()), index=0
+)
+page = PAGES[selected_page]
+page.app()
