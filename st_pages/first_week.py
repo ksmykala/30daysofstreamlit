@@ -1,5 +1,5 @@
 import streamlit as st
-import geopandas as gpd
+# import geopandas as gpd
 from src.repository import AirportsRepository
 import pydeck as pdk
 
@@ -27,7 +27,8 @@ def first_week():
     # ))
     # gdf_polygon = gpd.read_file(gpd.datasets.get_path("naturalearth_lowres"))
     gdf_polygon = from_data_file()
-    # gdf_polygon = 'https://d2ad6b4ur7yvpq.cloudfront.net/naturalearth-3.3.0/ne_10m_geography_regions_points.geojson'
+    # gdf_polygon = 'https://d2ad6b4ur7yvpq.cloudfront.net/'\
+    #     'naturalearth-3.3.0/ne_10m_geography_regions_points.geojson'
     layers = [
         pdk.Layer(
             type="GeoJsonLayer",

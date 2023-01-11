@@ -1,0 +1,20 @@
+version: '3.9'
+services:
+  st-30days-api:
+    image: st-30days/api
+    build:
+      context: .
+      dockerfile: DockerfileApi
+    ports:
+      - '80:80'
+    networks:
+      st-30days-network:
+        ipv4_address: 10.6.0.15
+
+networks:
+  st-30days-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.6.0.0/16
+          gateway: 10.6.0.1
