@@ -1,6 +1,0 @@
-dependencies:
-  - python=3.9
-  - pip:
-    - streamlit==1.16
-    - geopandas==0.12.2
-    - fastapi==0.89.1

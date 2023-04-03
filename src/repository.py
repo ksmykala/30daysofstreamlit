@@ -18,11 +18,14 @@ class GeoRepository(Repository):
 
 class AirportsRepository(GeoRepository):
 
-    def get_data(self) -> gpd.GeoDataFrame:
+    def get_data(self, n_samples=None) -> gpd.GeoDataFrame:
         url = 'https://raw.githubusercontent.com/andrea-ballatore/'\
             'open-geo-data-education/'\
             'a9f68c60b0088e1b34cfc35b985513cfdcaba05e/'\
             'datasets/airports/airports_2020.geojson'
-        self.airports = gpd.read_file(url, driver='GeoJSON')
+        self.airports: gpd.GeoDataFrame = gpd.read_file(url, driver='GeoJSON')
+
+        if n_samples:
+            self.airports = self.airports.sample(n_samples)
 
         return self.airports

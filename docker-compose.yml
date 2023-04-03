@@ -1,5 +1,15 @@
 version: '3.9'
 services:
+  st-30days:
+    image: st-30days/front
+    build:
+      context: .
+      dockerfile: DockerfileFront
+    ports:
+      - '8501:8501'
+    networks:
+      st-30days-network:
+        ipv4_address: 10.6.0.16
   st-30days-api:
     image: st-30days/api
     build:

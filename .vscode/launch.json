@@ -5,16 +5,27 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: FastAPI",
+            "name": "Python: Streamlit",
             "type": "python",
             "request": "launch",
-            "module": "uvicorn",
+            "module": "streamlit",
             "args": [
-                "api.api:api",
-                "--reload"
+                "run",
+                "streamlit_app.py"
             ],
-            "jinja": true,
-            "justMyCode": true
-        }
+            "justMyCode": false
+        },
+        // {
+        //     "name": "Python: FastAPI",
+        //     "type": "python",
+        //     "request": "launch",
+        //     "module": "uvicorn",
+        //     "args": [
+        //         "api.api:api",
+        //         "--reload"
+        //     ],
+        //     "jinja": true,
+        //     "justMyCode": false
+        // }
     ]
 }

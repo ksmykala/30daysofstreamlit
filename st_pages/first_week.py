@@ -5,7 +5,7 @@ import pydeck as pdk
 
 
 def first_week():
-    # st.write('Results of the first week')
+    st.write('Results of the first week - Map of airports')
 
     # gdf = from_data_file()
     # # st.write(gdf)
